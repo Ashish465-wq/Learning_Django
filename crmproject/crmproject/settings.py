@@ -52,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'crmproject.urls'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 TEMPLATES = [
     {
@@ -79,6 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'crm_db',
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017/',
+            'authSource': 'admin',
+        }
     }
 }
 

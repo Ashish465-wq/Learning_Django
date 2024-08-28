@@ -1,0 +1,12 @@
+{% extends 'crm_app/base.html' %}
+
+{% block content %}
+<h2>Contact List</h2>
+<ul>
+    {% for contact in contacts %}
+        <li>
+            <a href="{% url 'contact_detail' contact.pk %}">{{ contact.first_name }} {{ contact.last_name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'crm_app/base.html' %}
+
+{% block content %}
+<h2>{{ contact.first_name }} {{ contact.last_name }}</h2>
+<p>Email: {{ contact.email }}</p>
+<p>Phone: {{ contact.phone_number }}</p>
+<p>Category: {{ contact.category }}</p>
+<p>Company: {{ contact.company }}</p>
+<p>Address: {{ contact.address }}</p>
+
+<h3> Activities </h3>
+<ul>
+    {% for activity in activities%}
+        <li>{{ activity.date }}: {{activity.activity_text}}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'activity_create' contact.pk %}">Add Activity</a>
+{% endblock %}
